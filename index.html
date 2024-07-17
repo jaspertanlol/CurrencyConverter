@@ -24,6 +24,10 @@
               <label for="amount" class="form-label">Amount in GBP:</label>
               <input type="number" class="form-control" id="amount" placeholder="Enter amount in GBP" required>
             </div>
+            <div class="mb-3">
+              <label for="rate" class="form-label">Exchange Rate (1 GBP to SGD):</label>
+              <input type="number" class="form-control" id="rate" value="1.730" step="0.001" required>
+            </div>
             <button type="submit" class="btn btn-primary">Convert</button>
           </form>
           <div class="mt-3" id="result"></div>
@@ -37,13 +41,13 @@
   document.getElementById('currency-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    const gbpAmount = document.getElementById('amount').value;
-    const conversionRate = 1.73; // Example conversion rate: 1 GBP = 1.76 SGD
+    const gbpAmount = parseFloat(document.getElementById('amount').value);
+    const conversionRate = parseFloat(document.getElementById('rate').value);
     const sgdAmount = (gbpAmount * conversionRate).toFixed(2);
     
     document.getElementById('result').innerHTML = `
       <div class="alert alert-success">
-        £${gbpAmount} GBP is approximately S$${sgdAmount} SGD.
+        £${gbpAmount.toFixed(2)} GBP is approximately S$${sgdAmount} SGD.
       </div>
     `;
   });
