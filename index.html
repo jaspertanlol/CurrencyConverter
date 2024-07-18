@@ -22,11 +22,11 @@
           <form id="currency-form">
             <div class="mb-3">
               <label for="amount" class="form-label">Amount in GBP:</label>
-              <input type="number" class="form-control" id="amount" placeholder="Enter amount in GBP" required>
+              <input type="number" class="form-control" id="amount" placeholder="Enter amount in GBP" step="0.01" inputmode="decimal" required>
             </div>
             <div class="mb-3">
               <label for="rate" class="form-label">Exchange Rate (1 GBP to SGD):</label>
-              <input type="number" class="form-control" id="rate" step="0.001" required>
+              <input type="number" class="form-control" id="rate" step="0.001" inputmode="decimal" required>
             </div>
             <button type="submit" class="btn btn-primary">Convert</button>
           </form>
